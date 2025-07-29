@@ -139,8 +139,7 @@ class TestUrbanRoutes:
         car_comfort = pages.UrbanRoutesPage.set_confort(self)
         assert car_comfort.is_enabled()
         car_comfort.click()
-        #EC.visibility_of_element_located(By.)
-        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.smart-button-wrapper').click()
+        pages.UrbanRoutesPage.search_car(self)
 
     @classmethod
     def teardown_class(cls):
