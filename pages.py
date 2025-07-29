@@ -40,6 +40,8 @@ class UrbanRoutesPage:
 
     def get_phone(self):
         return self.driver.find_element(*self.button_round).get_property('value')
+    def phone_message(self):
+        self.driver.find_element(By.CSS_SELECTOR, '#comment').sendkeys(data.message_for_driver)
 
     def set_card_number(self):
         self.driver.find_element(*self.button_round).click()
@@ -74,3 +76,10 @@ class UrbanRoutesPage:
                                  '#root > div > div.number-picker.open > div.modal > div.section.active > form > div.buttons > button').click()
     def phone_text(self):
         self.driver.find_element(By.CLASS_NAME, "np-button").click()
+
+    def add_card_buttons(self):
+        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.pp-button.filled').click()
+        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.payment-picker.open > div.modal > div.section.active > div.pp-selector > div.pp-row.disabled').click()
+        self.driver.find_element(By.CSS_SELECTOR, '#number').send_keys(data.card_number)
+    def card_code(self):
+        self.driver.find_element(By.NAME, 'code').send_keys(data.card_code)
