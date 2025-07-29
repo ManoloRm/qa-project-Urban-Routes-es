@@ -9,6 +9,7 @@ class UrbanRoutesPage:
     payment_button = (By.ID, "pp-button filled")
     phon_num = (By.CLASS_NAME, 'np-button')
     car_comfort = (By.CSS_SELECTOR,'#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.tariff-cards > div.tcard.active > button')
+    manta_panuelos = (By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.reqs-body ' '> div:nth-child(1) > div > div.r-sw > div > span')
 
     def __init__(self, driver):
         self.driver = driver
@@ -50,7 +51,7 @@ class UrbanRoutesPage:
         return  self.driver.find_elements(By.CLASS_NAME, 'tcard-title')
 
     def set_confort(self):
-        return self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.tariff-cards > div.tcard.active > button')
+        return self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.tariff-cards > div:nth-child(5)')
 
     def get_confirm_phone(self):
         return self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.number-picker.open > div.modal > div.section.active > form > div.buttons > button').click()
@@ -58,3 +59,10 @@ class UrbanRoutesPage:
     def confirm_phone_code(self):
         self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.number-picker.open > div.modal > div.section.active > form > div.buttons > button:nth-child(1)').click()
 
+    def conmfrot_requarments(self):
+        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.reqs-body ' '> div:nth-child(1) > div > div.r-sw > div > span').click()
+
+    def helados_plus(self):
+        self.driver.find_element(By.CSS_SELECTOR,
+                                           '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.reqs-body '
+                                           '> div.r.r-type-group > div > div.r-group-items > div:nth-child(1) > div > div.r-counter > div > div.counter-plus').click()
