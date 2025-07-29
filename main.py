@@ -60,18 +60,18 @@ class TestUrbanRoutes:
         assert car_comfort.is_enabled()
         car_comfort.click()
         WebDriverWait(self.driver, 2)
-        self.driver.find_element(By.CLASS_NAME, "np-button").click()
+        pages.UrbanRoutesPage.phone_text(self)
         WebDriverWait(self.driver, 2)
         phone_number = data.phone_number
         assert phone_number == data.phone_number
         phone_text_select = self.driver.find_element(By.ID, 'phone')
         assert (EC.visibility_of_element_located(phone_text_select))
         phone_text_select.send_keys(phone_number)
-        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.number-picker.open > div.modal > div.section.active > form > div.buttons > button').click()
+        pages  .UrbanRoutesPage.phone_button_next(self)
         phone_code = retrieve_phone_code(self.driver)
         phone_code_code_text = self.driver.find_element(By.CSS_SELECTOR, '#code')
         phone_code_code_text.send_keys(phone_code)
-        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.number-picker.open > div.modal > div.section.active > form > div.buttons > button:nth-child(1)').click()
+        pages.UrbanRoutesPage.set_phone_confirm_code(self)
 
 
     def test_add_new_card(self):
