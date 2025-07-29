@@ -9,7 +9,7 @@ class UrbanRoutesPage:
     payment_button = (By.ID, "pp-button filled")
     phon_num = (By.CLASS_NAME, 'np-button')
     car_comfort = (By.CSS_SELECTOR,'#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.tariff-cards > div.tcard.active > button')
-    manta_panuelos = (By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.reqs-body ' '> div:nth-child(1) > div > div.r-sw > div > span')
+    manta_panuelos = (By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.reqs-body ' '> div:nth-child(1) > div > div.r-sw > div > span')\
 
     def __init__(self, driver):
         self.driver = driver
@@ -66,3 +66,5 @@ class UrbanRoutesPage:
         self.driver.find_element(By.CSS_SELECTOR,
                                            '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.reqs-body '
                                            '> div.r.r-type-group > div > div.r-group-items > div:nth-child(1) > div > div.r-counter > div > div.counter-plus').click()
+    def search_car(self):
+        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.smart-button-wrapper').click()
