@@ -59,9 +59,7 @@ class TestUrbanRoutes:
         car_comfort = pages.UrbanRoutesPage.set_confort(self)
         assert car_comfort.is_enabled()
         car_comfort.click()
-        WebDriverWait(self.driver, 2)
         pages.UrbanRoutesPage.phone_text(self)
-        WebDriverWait(self.driver, 2)
         phone_number = data.phone_number
         assert phone_number == data.phone_number
         phone_text_select = self.driver.find_element(By.ID, 'phone')
