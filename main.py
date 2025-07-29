@@ -55,11 +55,8 @@ class TestUrbanRoutes:
         test_address_to = data.address_to
         pages.UrbanRoutesPage.set_from(self, test_address_form)
         pages.UrbanRoutesPage.set_to(self, test_address_to)
-        assert test_address_form == data.address_from
-        assert test_address_to == data.address_to
-        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.type-picker.shown > div.results-container > div.results-text > button').click()
-        card_title_elements = self.driver.find_elements(By.CLASS_NAME,'tcard-title')
-        car_comfort = card_title_elements[4]
+        pages.UrbanRoutesPage.get_button_round(self)
+        car_comfort = pages.UrbanRoutesPage.set_confort(self)
         assert car_comfort.is_enabled()
         car_comfort.click()
         WebDriverWait(self.driver, 2)
@@ -82,12 +79,9 @@ class TestUrbanRoutes:
         test_address_form = data.address_from
         test_address_to = data.address_to
         pages.UrbanRoutesPage.set_from(self, test_address_form)
-        pages.UrbanRoutesPage.set_to(self,test_address_to)
-        assert test_address_form == data.address_from
-        assert test_address_to == data.address_to
-        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.type-picker.shown > div.results-container > div.results-text > button').click()
-        card_title_elements = self.driver.find_elements(By.CLASS_NAME,'tcard-title')
-        car_comfort = card_title_elements[4]
+        pages.UrbanRoutesPage.set_to(self, test_address_to)
+        pages.UrbanRoutesPage.get_button_round(self)
+        car_comfort = pages.UrbanRoutesPage.set_confort(self)
         assert car_comfort.is_enabled()
         car_comfort.click()
         self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.pp-button.filled').click()
@@ -101,12 +95,9 @@ class TestUrbanRoutes:
         test_address_form = data.address_from
         test_address_to = data.address_to
         pages.UrbanRoutesPage.set_from(self, test_address_form)
-        pages.UrbanRoutesPage.set_to(self,test_address_to)
-        assert test_address_form == data.address_from
-        assert test_address_to == data.address_to
-        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.type-picker.shown > div.results-container > div.results-text > button').click()
-        card_title_elements = self.driver.find_elements(By.CLASS_NAME, 'tcard-title')
-        car_comfort = card_title_elements[4]
+        pages.UrbanRoutesPage.set_to(self, test_address_to)
+        pages.UrbanRoutesPage.get_button_round(self)
+        car_comfort = pages.UrbanRoutesPage.set_confort(self)
         assert car_comfort.is_enabled()
         car_comfort.click()
         message_box = self.driver.find_element(By.CSS_SELECTOR, '#comment')
@@ -118,12 +109,9 @@ class TestUrbanRoutes:
         test_address_form = data.address_from
         test_address_to = data.address_to
         pages.UrbanRoutesPage.set_from(self, test_address_form)
-        pages.UrbanRoutesPage.set_to(self,test_address_to)
-        assert test_address_form == data.address_from
-        assert test_address_to == data.address_to
-        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.type-picker.shown > div.results-container > div.results-text > button').click()
-        card_title_elements = self.driver.find_elements(By.CLASS_NAME, 'tcard-title')
-        car_comfort = card_title_elements[4]
+        pages.UrbanRoutesPage.set_to(self, test_address_to)
+        pages.UrbanRoutesPage.get_button_round(self)
+        car_comfort = pages.UrbanRoutesPage.set_confort(self)
         assert car_comfort.is_enabled()
         car_comfort.click()
         self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.reqs-body '
@@ -134,12 +122,9 @@ class TestUrbanRoutes:
         test_address_form = data.address_from
         test_address_to = data.address_to
         pages.UrbanRoutesPage.set_from(self, test_address_form)
-        pages.UrbanRoutesPage.set_to(self,test_address_to)
-        assert test_address_form == data.address_from
-        assert test_address_to == data.address_to
-        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.type-picker.shown > div.results-container > div.results-text > button').click()
-        card_title_elements = self.driver.find_elements(By.CLASS_NAME, 'tcard-title')
-        car_comfort = card_title_elements[4]
+        pages.UrbanRoutesPage.set_to(self, test_address_to)
+        pages.UrbanRoutesPage.get_button_round(self)
+        car_comfort = pages.UrbanRoutesPage.set_confort(self)
         assert car_comfort.is_enabled()
         car_comfort.click()
         helados = self.driver.find_element(By.CSS_SELECTOR,
@@ -153,12 +138,9 @@ class TestUrbanRoutes:
         test_address_form = data.address_from
         test_address_to = data.address_to
         pages.UrbanRoutesPage.set_from(self, test_address_form)
-        pages.UrbanRoutesPage.set_to(self,test_address_to)
-        assert test_address_form == data.address_from
-        assert test_address_to == data.address_to
-        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.type-picker.shown > div.results-container > div.results-text > button').click()
-        card_title_elements = self.driver.find_elements(By.CLASS_NAME, 'tcard-title')
-        car_comfort = card_title_elements[4]
+        pages.UrbanRoutesPage.set_to(self, test_address_to)
+        pages.UrbanRoutesPage.get_button_round(self)
+        car_comfort = pages.UrbanRoutesPage.set_confort(self)
         assert car_comfort.is_enabled()
         car_comfort.click()
         #EC.visibility_of_element_located(By.)
