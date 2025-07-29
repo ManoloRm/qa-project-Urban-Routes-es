@@ -84,11 +84,8 @@ class TestUrbanRoutes:
         car_comfort = pages.UrbanRoutesPage.set_confort(self)
         assert car_comfort.is_enabled()
         car_comfort.click()
-        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.pp-button.filled').click()
-        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.payment-picker.open > div.modal > div.section.active > div.pp-selector > div.pp-row.disabled').click()
-        self.driver.find_element(By.CSS_SELECTOR, '#number').send_keys(data.card_number)
-        code_card = self.driver.find_element(By.NAME,'code')
-        code_card.send_keys(data.card_code)
+        pages.UrbanRoutesPage.add_card_buttons(self)
+        pages.UrbanRoutesPage.card_code(self)
 
     def test_message_driver(self):
         self.driver.get(data.urban_routes_url)
@@ -101,8 +98,7 @@ class TestUrbanRoutes:
         assert car_comfort.is_enabled()
         car_comfort.click()
         message_box = self.driver.find_element(By.CSS_SELECTOR, '#comment')
-        message_box.send_keys(data.card_number)
-        WebDriverWait(self.driver, 20)
+
 
     def test_manta_panuelos(self):
         self.driver.get(data.urban_routes_url)
