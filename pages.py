@@ -32,7 +32,7 @@ class UrbanRoutesPage:
     def select_rout(self):
         self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.type-picker.shown > div.modes-container > div.mode.active').click()
 
-    def set_phone(self):
+    def set_phone_confirm_code(self):
         self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.number-picker.open > div.modal > div.section.active > form > div.buttons > button:nth-child(1)').click()
 
     def phone_text(self):
@@ -68,3 +68,9 @@ class UrbanRoutesPage:
                                            '> div.r.r-type-group > div > div.r-group-items > div:nth-child(1) > div > div.r-counter > div > div.counter-plus').click()
     def search_car(self):
         self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.smart-button-wrapper').click()
+
+    def phone_button_next(self):
+        self.driver.find_element(By.CSS_SELECTOR,
+                                 '#root > div > div.number-picker.open > div.modal > div.section.active > form > div.buttons > button').click()
+    def phone_text(self):
+        self.driver.find_element(By.CLASS_NAME, "np-button").click()
