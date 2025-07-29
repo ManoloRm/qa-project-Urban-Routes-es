@@ -10,14 +10,11 @@ class UrbanRoutesPage:
     phon_num = (By.CLASS_NAME, 'np-button')
     car_comfort = (By.CSS_SELECTOR,'#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.tariff-cards > div.tcard.active > button')
 
-
     def __init__(self, driver):
         self.driver = driver
 
     def get_button_round(self):
         return self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.type-picker.shown > div.results-container > div.results-text > button').click()
-
-    #def get_payment_button(self):
 
     def set_from(self, from_address):
         self.driver.find_element(By.ID, 'from').send_keys(from_address)
@@ -35,8 +32,10 @@ class UrbanRoutesPage:
         self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.type-picker.shown > div.modes-container > div.mode.active').click()
 
     def set_phone(self):
-        self.driver.find_element(*self.button_round).click()
-        self.driver.send_keys(data.phone_number)
+        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.number-picker.open > div.modal > div.section.active > form > div.buttons > button:nth-child(1)').click()
+
+    def phone_text(self):
+        self.driver.find_element(By.ID, 'phone').send_keys(data.phone_number)
 
     def get_phone(self):
         return self.driver.find_element(*self.button_round).get_property('value')
@@ -52,4 +51,10 @@ class UrbanRoutesPage:
 
     def set_confort(self):
         return self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.tariff-cards > div.tcard.active > button')
+
+    def get_confirm_phone(self):
+        return self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.number-picker.open > div.modal > div.section.active > form > div.buttons > button').click()
+
+    def confirm_phone_code(self):
+        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.number-picker.open > div.modal > div.section.active > form > div.buttons > button:nth-child(1)').click()
 
