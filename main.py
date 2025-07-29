@@ -114,8 +114,7 @@ class TestUrbanRoutes:
         car_comfort = pages.UrbanRoutesPage.set_confort(self)
         assert car_comfort.is_enabled()
         car_comfort.click()
-        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.reqs-body '
-                                                  '> div:nth-child(1) > div > div.r-sw > div > span').click()
+        pages.UrbanRoutesPage.conmfrot_requarments(self)
 
     def test_helados(self):
         self.driver.get(data.urban_routes_url)
@@ -127,11 +126,8 @@ class TestUrbanRoutes:
         car_comfort = pages.UrbanRoutesPage.set_confort(self)
         assert car_comfort.is_enabled()
         car_comfort.click()
-        helados = self.driver.find_element(By.CSS_SELECTOR,
-                                           '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.reqs-body '
-                                           '> div.r.r-type-group > div > div.r-group-items > div:nth-child(1) > div > div.r-counter > div > div.counter-plus')
-        helados.click()
-        helados.click()
+        pages.UrbanRoutesPage.helados_plus(self)
+        pages.UrbanRoutesPage.helados_plus(self)
 
     def test_search_taxi(self):
         self.driver.get(data.urban_routes_url)
