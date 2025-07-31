@@ -18,3 +18,7 @@ poder interactuar con la pagina web simulando la inteccion de un usuario para ge
 
 En el caso de que la instalación de los driver para el controlador web para selenium no sea exitoso, se puede importar la paqueteria desde pycharm para no tener problemas
 al momento de ejecutar codigo de selenium.
+
+En el archivo pages, se especifica el lugar de los objetos que se pueden interactuar utilizando localizadores como por ejemplo xpath, css, class name, id, para que al momento de 
+hacer la interaccion de parte de "usuario" en el archivo main este solo llame a los elementos de pages y asi no volver a colocar los localizadores en el caso de que la app web cambie 
+es necesario volver a obtener los localizadores haciedo uso de dev tools desde el propio navegador web.
