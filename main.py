@@ -111,7 +111,7 @@ class TestUrbanRoutes:
         pages.UrbanRoutesPage.get_scarve_blanket(self)
 
 
-    def test_ice(self):
+    def test_icecream(self):
         self.driver.get(data.urban_routes_url)
         test_address_form = data.address_from
         test_address_to = data.address_to
