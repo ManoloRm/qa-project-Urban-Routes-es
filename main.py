@@ -98,7 +98,7 @@ class TestUrbanRoutes:
         message_box = self.driver.find_element(By.CSS_SELECTOR, '#comment')
 
 
-    def test_manta_panuelos(self):
+    def test_blanket_scarves(self):
         self.driver.get(data.urban_routes_url)
         test_address_form = data.address_from
         test_address_to = data.address_to
@@ -108,9 +108,10 @@ class TestUrbanRoutes:
         car_comfort = pages.UrbanRoutesPage.set_confort(self)
         assert car_comfort.is_enabled()
         car_comfort.click()
-        pages.UrbanRoutesPage.conmfrot_requarments(self)
+        pages.UrbanRoutesPage.get_scarve_blanket(self)
 
-    def test_helados(self):
+
+    def test_ice(self):
         self.driver.get(data.urban_routes_url)
         test_address_form = data.address_from
         test_address_to = data.address_to
