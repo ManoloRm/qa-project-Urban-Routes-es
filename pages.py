@@ -9,7 +9,7 @@ class UrbanRoutesPage:
     payment_button = (By.ID, "pp-button filled")
     phon_num = (By.CLASS_NAME, 'np-button')
     car_comfort = (By.CSS_SELECTOR,'#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.tariff-cards > div.tcard.active > button')
-    manta_panuelos = (By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.reqs-body ' '> div:nth-child(1) > div > div.r-sw > div > span')\
+    blanket_scarves = (By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.reqs-body ' '> div:nth-child(1) > div > div.r-sw > div > span')
 
     def __init__(self, driver):
         self.driver = driver
@@ -40,6 +40,7 @@ class UrbanRoutesPage:
 
     def get_phone(self):
         return self.driver.find_element(*self.button_round).get_property('value')
+
     def phone_message(self):
         self.driver.find_element(By.CSS_SELECTOR, '#comment').sendkeys(data.message_for_driver)
 
@@ -49,7 +50,7 @@ class UrbanRoutesPage:
     def get_confort(self):
         return self.driver.find_elements(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.type-picker.shown > div.results-container > div.results-text > button')
 
-    def get_confort_nt(self):
+    def get_confort_note(self):
         return  self.driver.find_elements(By.CLASS_NAME, 'tcard-title')
 
     def set_confort(self):
@@ -81,5 +82,9 @@ class UrbanRoutesPage:
         self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.pp-button.filled').click()
         self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.payment-picker.open > div.modal > div.section.active > div.pp-selector > div.pp-row.disabled').click()
         self.driver.find_element(By.CSS_SELECTOR, '#number').send_keys(data.card_number)
+
     def card_code(self):
         self.driver.find_element(By.NAME, 'code').send_keys(data.card_code)
+
+    def get_scarve_blanket(self):
+        self.driver.find_element(By.CSS_SELECTOR, '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.reqs-body ' '> div:nth-child(1) > div > div.r-sw > div > span').click()
